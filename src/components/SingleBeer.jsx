@@ -16,8 +16,8 @@ export default class SingleBeer extends Component {
   }
 
   fetchData() {
-    BeerApi.RandomBeerApi()
-      .then((randomBeer) => this.setState({ beer: randomBeer }))
+    BeerApi.SingleBeerApi(this.props.match.params.id)
+      .then((singleBeer) => this.setState({ beer: singleBeer }))
       .catch((error) => console.log(error));
   }
 
